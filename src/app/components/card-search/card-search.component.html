@@ -1,0 +1,28 @@
+<main class="container">
+    <nav class="row">
+        <div class="col"> 
+            <button class="btn btn-primary" type="button" (click)="isExpanded = !isExpanded" aria-expanded="false" aria-controls="filters">
+                Filters
+            </button>
+        </div>
+        <div class="col-6"> 
+            <button class="btn btn-primary">
+                Sort By
+            </button>
+        </div>
+        <div class="col"> 
+            <a href="/">
+                <button class="btn btn-primary" routerLink="/">
+                    Back to menu
+                </button>
+            </a>
+        </div>
+    </nav>
+    <div *ngIf="isExpanded" class="overlay" (click)="onOverlayClick()"></div>
+    <div [ngClass]="{'collapsed': !isExpanded, 'expanded': isExpanded}" id="filters">
+        <app-card-search-filters></app-card-search-filters>
+    </div>
+    <div id="searchresult">
+        <div class="card card-body">search results</div>
+    </div>
+</main>
