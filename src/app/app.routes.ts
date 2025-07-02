@@ -10,3 +10,4 @@ export const routes: Routes = [
     {path: 'deck-list', component: DeckListComponent},
     {path: 'options-menu', component: OptionsMenuComponent},
 ];
+ 

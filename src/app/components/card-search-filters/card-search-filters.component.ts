@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, EventEmitter, Output} from '@angular/core';
 import {FormGroup, FormControl, ReactiveFormsModule, Validators} from '@angular/forms'
 import { CardSearchService } from '../../services/card-search.service';
 
@@ -10,6 +10,8 @@ import { CardSearchService } from '../../services/card-search.service';
   styleUrl: './card-search-filters.component.css'
 })
 export class CardSearchFiltersComponent {
+  @Output() cardsFetched = new EventEmitter<any[]>();
+
   constructor (private cardSearchService: CardSearchService) {}
   searchFiltersForm = new FormGroup({
     name: new FormControl(''),
@@ -25,9 +27,9 @@ export class CardSearchFiltersComponent {
     black: new FormControl(''),
     yellow: new FormControl(''),
     cost: new FormControl('', [Validators.pattern("^[0-9]*$")]),
-    costOperator: new FormControl(''),
+    costOperator: new FormControl('='),
     power: new FormControl('', [Validators.pattern("^[0-9]*$")]),
-    powerOperator: new FormControl(''),
+    powerOperator: new FormControl('='),
     counter: new FormControl(''),
     type: new FormControl(''),
     set: new FormControl(''),
@@ -84,7 +86,10 @@ export class CardSearchFiltersComponent {
         }
       }
       this.cardSearchService.searchCards(cardSearchObject).subscribe({
-        next: (data) => console.log(data),
+        next: (response) => {
+          var cardArray = response.cards
+          this.cardsFetched.emit(cardArray)
+        },
         error: (error) => console.log(error)
       })
     } 

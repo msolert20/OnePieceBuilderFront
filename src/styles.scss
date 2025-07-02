@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+$primary: #2A2A5C ;
+$secondary:#BC9A4A;
+$success: #04F1E1;
+$warning: #FFFD70;
+$danger:#90141E;
+$dark:#291600;
+$light:#FBFFF1;
+$info: #ABABD8  ;
+
+$theme-colors:(
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark,
+    "info": $info
+);
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../public/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:url('../public/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: $primary !important
+}  
+
+@import 'bootstrap/scss/bootstrap';

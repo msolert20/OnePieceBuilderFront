@@ -1,85 +1,97 @@
-<form [formGroup]="searchFiltersForm">
-    <label for="card_name">Name</label>
-    <input type="text" formControlName="name" name="card_name" id="card_name">
-    <br>
-    <label for="card_text">Text</label>
-    <input type="text" formControlName="text" name="card_text" id="card_text">
-    <div class="row">
-        <div class="col">
-            <label for="card_category">Character</label>
-            <br>
-            <input type="checkbox" formControlName="character" name="card_category" id="category_character" value="Character">
+<form [formGroup]="searchFiltersForm" class="d-flex flex-column p-3 bg-info text-dark">
+    <div class="input-group m-1">
+        <span class="input-group-text" for="card_name">Name</span>
+        <input class="form-control" type="text" formControlName="name" name="card_name" id="card_name">
+    </div>
+    
+    <div class="input-group m-1">
+        <span class="input-group-text " for="card_text">Text</span>
+        <input class="form-control" type="text" formControlName="text" name="card_text" id="card_text">
+    </div>
+    <div class="d-flex flex-row m-1">
+        <div class="form-check form-switch w-50">
+            <input class="form-check-input" type="checkbox" formControlName="character" name="card_category" id="category_character" value="Character">
+            <label class="form-check-label" for="card_category">Character</label>
         </div>
-        <div class="col">
-            <label for="card_category">Leader</label>
-            <br>
-            <input type="checkbox" formControlName="leader" name="card_category" id="category_leader" value="Leader">
-        </div>
-        <div class="col">
-            <label for="card_category">Event</label>
-            <br>
-            <input type="checkbox" formControlName="event" name="card_category" id="category_event" value="Event">
-        </div>
-        <div class="col">
-            <label for="card_category">Stage</label>
-            <br>
-            <input type="checkbox" formControlName="stage" name="card_category" id="category_stage" value="Stage">
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" formControlName="leader" name="card_category" id="category_leader" value="Leader">
+            <label class="form-check-label" for="card_category">Leader</label>
         </div>
     </div>
-    <div class="row">
-        <div class="red col-1">
-            <input type="checkbox" formControlName="red" value="red" id="red_check">
+    <div class="d-flex flex-row">
+        <div class="form-check form-switch w-50">
+            <input class="form-check-input" type="checkbox" formControlName="event" name="card_category" id="category_event" value="Event">
+            <label class="form-check-label" for="card_category">Event</label>
         </div>
-        <div class="green col-1">
-            <input type="checkbox" formControlName="green" value="green" id="green_check">
-        </div>
-        <div class="purple col-1">
-            <input type="checkbox" formControlName="purple" value="purple" id="purple_check"> 
-        </div>
-        <div class="blue col-1">
-            <input type="checkbox" formControlName="blue" value="blue" id="blue_check">
-        </div>
-        <div class="black col-1">
-            <input type="checkbox" formControlName="black" value="black" id="black_check">
-        </div>
-        <div class="yellow col-1">
-            <input type="checkbox" formControlName="yellow" value="yellow" id="yellow_check">
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" formControlName="stage" name="card_category" id="category_stage" value="Stage">
+            <label class="form-check-label" for="card_category">Stage</label>
         </div>
     </div>
-    <div>
-        <label for="card_cost">Cost</label>
-        <input type="text" formControlName="cost" name="card_cost">
-        <select formControlName="costOperator" name="cost_operator" id="">
+    <div class="d-flex flex-row justify-content-between  m-1">
+        <div class="red p-2 border border-dark rounded d-flex justify-content-center">
+            <input class="form-check-input" type="checkbox" formControlName="red" value="red" id="red_check">
+        </div>
+        <div class="green p-2 border border-dark  rounded d-flex justify-content-center">
+            <input class="form-check-input" type="checkbox" formControlName="green" value="green" id="green_check">
+        </div>
+        <div class="purple p-2 border border-dark rounded d-flex justify-content-center">
+            <input class="form-check-input" type="checkbox" formControlName="purple" value="purple" id="purple_check"> 
+        </div>
+        <div class="blue p-2 border border-dark rounded d-flex justify-content-center">
+            <input class="form-check-input" type="checkbox" formControlName="blue" value="blue" id="blue_check">
+        </div>
+        <div class="black p-2 border border-dark rounded d-flex justify-content-center">
+            <input class="form-check-input" type="checkbox" formControlName="black" value="black" id="black_check">
+        </div>
+        <div class="yellow p-2 border border-dark  rounded d-flex justify-content-center">
+            <input class="form-check-input" type="checkbox" formControlName="yellow" value="yellow" id="yellow_check">
+        </div>
+    </div>
+   
+    <div class="input-group  m-1">
+        <span class="input-group-text rounded-start">Cost</span>
+        <input class="form-control" type="text" formControlName="text" name="card_text" id="card_text">
+        <select class="form-select" formControlName="costOperator" name="cost_operator" id="">
             <option value=">">More than</option>
             <option value="<">Less than</option>
             <option value="=" selected>Equal to</option>
         </select>
-        <br>
-        <label for="card_power">Power</label>
-        <input type="text" formControlName="power" name="card_power">
-        <select formControlName="powerOperator" name="power_operator" id="">
+    </div>
+    <div class="input-group m-1">
+        <label class="input-group-text" for="card_power">Power</label>
+        <input class="form-control" type="text" formControlName="power" name="card_power">
+        <select class="form-select" formControlName="powerOperator" name="power_operator" id="">
             <option value=">">More than</option>
             <option value="<">Less than</option>
             <option value="=" selected>Equal to</option>
         </select>
-        <br>    
-        <label for="card_counter">Counter</label>
-        <select formControlName="counter" name="card_counter" formControlName="counter" id="counter">
+    </div>
+    <div class="input-group m-1">
+        <label class="input-group-text" for="card_counter">Counter</label>
+        <select class="form-select" formControlName="counter" name="card_counter" formControlName="counter" id="counter">
             <option value="none">None</option>
             <option value="1k">1000</option>
             <option value="2k">2000</option>
         </select>
     </div>
-    <label for="card_type">Type</label>
-    <input type="text" formControlName="type" name="card_type">
-    <br>
-    <label for="card_set">Set</label>
-    <input type="text" formControlName="set" name="card_set">
-    <br>
-    <label for="card_id">Id</label>
-    <input type="text" formControlName="id"name="card_id">
-    <br>
-    <button (click)="submitForm()">
+  
+    <div class="input-group m-1">
+        <label class="input-group-text" for="card_type">Type</label>
+        <input class="form-control" type="text" formControlName="type" name="card_type">
+    </div>
+    
+    <div class="input-group m-1">
+        <label class="input-group-text" for="card_set">Set</label>
+        <input class="form-control" type="text" formControlName="set" name="card_set">
+    </div>
+    
+    <div class="input-group m-1">
+        <label class="input-group-text" for="card_id">Id</label>
+        <input class="form-control" type="text" formControlName="id"name="card_id">
+    </div>
+
+    <button class="btn btn-secondary" (click)="submitForm()">
         Apply filters
     </button>
 </form>
