@@ -1,10 +1,10 @@
-<main class="main">
-    <div>
-      <img src="app/mocklogo.jpg" alt="logo">
-      <ul class="list-group">
-        <li class="list-group-item list-group-item-action"> <a href="/card-search"> Card Search</a></li>
-        <li class="list-group-item list-group-item-action"> <a href="/deck-list"> Decks </a> </li>
-        <li class="list-group-item list-group-item-action"> <a href="/options-menu"> Options </a> </li>
-      </ul>
+<main >
+    <div class="d-flex flex-column justify-content-between flex-wrap mt-5 p-5">
+        <button (click)="navigateCardSearch()" class="btn btn-secondary m-5 text-primary fs-2 fw-bold"> Card Search</button>
+        <button (click)="navigateDecks()" class="btn btn-secondary m-5 text-primary fs-2 fw-bold">Decks</button>
+        <button (click)="navigateOptions()" class="btn btn-secondary m-5 text-primary fs-2 fw-bold">Options</button>
     </div>
+    <footer class="text-light text-sm fixed-bottom m-1">
+      One Piece Trading Card game is licensed by Bandai. This app is not for lucrative purposes and has no association with the game.
+    </footer>
 </main>

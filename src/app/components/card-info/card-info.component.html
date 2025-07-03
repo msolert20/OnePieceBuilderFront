@@ -1,0 +1,24 @@
+<div class="text-dark">
+    <div *ngIf="card; else noCard" class="p-1">
+        <div class="d-flex flex-row justify-content-center">
+            <img class="w-75 rounded justify-self-center" src="cards/{{card.id}}.png" (error)="onImageError($event, card.id)" >
+        </div>
+        <div class="d-flex flex-row justify-content-between m-2">
+            <h3>
+                {{card.name}}
+            </h3> 
+            <h4>
+                 {{card.id}} 
+            </h4> 
+        </div>
+        <div class="mb-1"> {{card.category}} - {{card.color}} - {{card.cost}} Cost </div>
+        <div *ngIf="card.power && card.counter" > {{card.power}} Power - {{card.counter}} Counter </div>
+        <div class="rounded bg-light p-2"> {{card.text}} </div>
+        <div class="mt-1"> {{card.type}} </div>
+        <div> {{card.set_name}} </div>
+    </div>
+
+    <ng-template #noCard>
+        <div> No card selected</div>
+    </ng-template>
+</div>

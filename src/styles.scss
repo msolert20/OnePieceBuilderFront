@@ -38,7 +38,8 @@ $theme-colors:(
 }
 
 body{
-    background-color: $primary !important
+    background-image: url(../public/app/homebackground.jpg) !important;
+    // background-color: $primary 
 }  
 
 @import 'bootstrap/scss/bootstrap';

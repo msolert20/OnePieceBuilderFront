@@ -1,13 +1,15 @@
 <form [formGroup]="searchFiltersForm" class="d-flex flex-column p-3 bg-info text-dark">
+    <!-- name -->
     <div class="input-group m-1">
         <span class="input-group-text" for="card_name">Name</span>
         <input class="form-control" type="text" formControlName="name" name="card_name" id="card_name">
     </div>
-    
+    <!-- text -->
     <div class="input-group m-1">
         <span class="input-group-text " for="card_text">Text</span>
         <input class="form-control" type="text" formControlName="text" name="card_text" id="card_text">
     </div>
+    <!-- category -->
     <div class="d-flex flex-row m-1">
         <div class="form-check form-switch w-50">
             <input class="form-check-input" type="checkbox" formControlName="character" name="card_category" id="category_character" value="Character">
@@ -18,7 +20,7 @@
             <label class="form-check-label" for="card_category">Leader</label>
         </div>
     </div>
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-row m-1">
         <div class="form-check form-switch w-50">
             <input class="form-check-input" type="checkbox" formControlName="event" name="card_category" id="category_event" value="Event">
             <label class="form-check-label" for="card_category">Event</label>
@@ -28,6 +30,7 @@
             <label class="form-check-label" for="card_category">Stage</label>
         </div>
     </div>
+    <!-- color -->
     <div class="d-flex flex-row justify-content-between  m-1">
         <div class="red p-2 border border-dark rounded d-flex justify-content-center">
             <input class="form-check-input" type="checkbox" formControlName="red" value="red" id="red_check">
@@ -48,16 +51,17 @@
             <input class="form-check-input" type="checkbox" formControlName="yellow" value="yellow" id="yellow_check">
         </div>
     </div>
-   
+   <!-- cost -->
     <div class="input-group  m-1">
         <span class="input-group-text rounded-start">Cost</span>
-        <input class="form-control" type="text" formControlName="text" name="card_text" id="card_text">
+        <input class="form-control" type="text" formControlName="cost" name="card_text" id="card_text">
         <select class="form-select" formControlName="costOperator" name="cost_operator" id="">
             <option value=">">More than</option>
             <option value="<">Less than</option>
             <option value="=" selected>Equal to</option>
         </select>
     </div>
+    <!--power -->
     <div class="input-group m-1">
         <label class="input-group-text" for="card_power">Power</label>
         <input class="form-control" type="text" formControlName="power" name="card_power">
@@ -67,25 +71,27 @@
             <option value="=" selected>Equal to</option>
         </select>
     </div>
+    <!-- counter -->
     <div class="input-group m-1">
         <label class="input-group-text" for="card_counter">Counter</label>
         <select class="form-select" formControlName="counter" name="card_counter" formControlName="counter" id="counter">
+            <option value="">Any</option>
             <option value="none">None</option>
-            <option value="1k">1000</option>
-            <option value="2k">2000</option>
+            <option value="1000">1000</option>
+            <option value="2000">2000</option>
         </select>
     </div>
-  
+    <!-- type -->
     <div class="input-group m-1">
         <label class="input-group-text" for="card_type">Type</label>
         <input class="form-control" type="text" formControlName="type" name="card_type">
     </div>
-    
+    <!-- set name (doesnt support set abreviations yet) -->
     <div class="input-group m-1">
-        <label class="input-group-text" for="card_set">Set</label>
+        <label class="input-group-text" for="card_set">Set Name</label>
         <input class="form-control" type="text" formControlName="set" name="card_set">
     </div>
-    
+    <!-- Id (single card search, not supported yet) -->
     <div class="input-group m-1">
         <label class="input-group-text" for="card_id">Id</label>
         <input class="form-control" type="text" formControlName="id"name="card_id">
